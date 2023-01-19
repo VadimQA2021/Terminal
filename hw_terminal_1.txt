@@ -1,0 +1,104 @@
+1) Посмотреть где я
+➜  ~ pwd
+/Users/Vadim
+2) Создать папку
+➜  ~ mkdir terminal_hw
+3) Зайти в папку
+➜  ~ cd terminal_hw
+4) Создать 3 папки
+➜  terminal_hw mkdir {folder_1,folder_2,folder_3}
+5) Зайти в любоую папку
+➜  terminal_hw cd folder_1
+6) Создать 5 файлов (3 txt, 2 json)
+➜  folder_1 touch {file_1.txt,file_2.txt,file_3.txt,file_4.json,file_5.json}
+7) Создать 3 папки
+➜  folder_1 mkdir {box_1,box_2,box_3}
+8) Вывести список содержимого папки
+➜  folder_1 ls -la
+9) + Открыть любой txt файл
+10) + написать туда что-нибудь, любой текст.
+11) + сохранить и выйти.
+➜  folder_1 vim file_1.txt
+12) Выйти из папки на уровень выше
+➜  folder_1 cd ../
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+➜  folder_1 mv file_1.txt ../folder_2/f1.txt
+➜  folder_1 mv file_2.txt ../folder_2/f2.txt
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+cp file_3.txt ../folder_3/f3.txt && cp file_4.json ../folder_3/f4.json
+15) Найти файл по имени
+find . -name "file_5*"
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+Vadim@MacBook-Pro-newowner ~/t/folder_1> cat >> file_3.txt
+title1
+title2
+title
+title
+title
+title
+title
+title3
+title4
+title5
+title6
+title7
+Vadim@MacBook-Pro-newowner ~/t/folder_1 [SIGINT]> grep title file_3.txt
+title1
+title2
+title
+title
+title
+title
+title
+title3
+title4
+title5
+title6
+title7
+17) вывести несколько первых строк из текстового файла
+Vadim@MacBook-Pro-newowner ~/t/folder_1> head -4 file_3.txt
+hhh
+jjj
+kkk
+lll
+18) вывести несколько последних строк из текстового файла
+Vadim@MacBook-Pro-newowner ~/t/folder_1> tail -4 file_3.txt
+title4
+title5
+title6
+title7
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+Vadim@MacBook-Pro-newowner ~/t/folder_2 [SIGINT]> less -E f1.txt
+команда позволяет просмотривать содержимое больших файлов
+20) вывести дату и время
+Vadim@MacBook-Pro-newowner ~/t/folder_2> time date
+четверг, 19 января 2023 г. 19:57:53 (+06)
+
+Задание *
+1) Отправить http запрос на сервер.
+Vadim@MacBook-Pro-newowner ~/t/folder_2 [7]> curl http://162.55.220.72:5055/terminal-hw-request
+
+curl: (7) Failed to connect to 162.55.220.72 port 5055 after 124 ms: Connection refused
+
+Vadim@MacBook-Pro-newowner ~/terminal_hw> vim script.sh
+cd terminal_hw
+mkdir {folder_1,folder_2,folder_3}
+cd folder_1
+touch {file_1.txt,file_2.txt,file_3.txt,file_4.json,file_5.json}
+mkdir {box_1,box_2,box_3}
+ls -la
+mv file_1.txt ../folder_2/f1.txt
+mv file_2.txt ../folder_2/f2.txt
+
+Vadim@MacBook-Pro-newowner ~/terminal_hw> bash script.sh
+total 0
+drwxr-xr-x  10 Vadim  staff  320 19 янв 20:52 .
+drwxr-xr-x   5 Vadim  staff  160 19 янв 20:52 ..
+drwxr-xr-x   2 Vadim  staff   64 19 янв 20:52 box_1
+drwxr-xr-x   2 Vadim  staff   64 19 янв 20:52 box_2
+drwxr-xr-x   2 Vadim  staff   64 19 янв 20:52 box_3
+-rw-r--r--   1 Vadim  staff    0 19 янв 20:52 file_1.txt
+-rw-r--r--   1 Vadim  staff    0 19 янв 20:52 file_2.txt
+-rw-r--r--   1 Vadim  staff    0 19 янв 20:52 file_3.txt
+-rw-r--r--   1 Vadim  staff    0 19 янв 20:52 file_4.json
+-rw-r--r--   1 Vadim  staff    0 19 янв 20:52 file_5.json
